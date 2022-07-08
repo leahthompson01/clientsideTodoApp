@@ -8,14 +8,20 @@ import "./App.css";
 const endpointURL = "https://notesapi2000000l.herokuapp.com/notes";
 const formStyles = {
   // width: "20%",
+  fontSize: "1.2rem",
+  paddingTop: "1rem",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  marginLeft: "2rem",
+  alignItems: "center",
+  backgroundColor: "#363062",
+  color: "#f8e9e0",
+  // marginLeft: "2rem",
   // margin: "0 auto"
 };
 const container = {
   // marginTop: "15%",
+  fontSize: "1.4rem",
   backgroundColor: "#363062",
   display: "flex",
   justifyContent: "space-around",
@@ -34,6 +40,10 @@ export default function App() {
       description: "",
     },
   ]);
+  console.log(toDoItems);
+  if(toDoItems.length === 1){
+
+  }
   const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
   //finish moving axios requests to different files
@@ -94,14 +104,16 @@ export default function App() {
   // }
 
   return (
-    <div style={container}>
+    <>
       <form style={formStyles} className="formArea">
+        Task:{" "}
         <input
           type="text"
           name="task"
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
+        Description:{" "}
         <textarea
           name="description"
           value={description}
@@ -111,17 +123,18 @@ export default function App() {
           Add
         </button>
       </form>
-      <section className="toDoContainer">
-        {toDoItems.map((obj, index) => (
-          <ToDo
-            key={obj._id}
-            setToDoItems={setToDoItems}
-            setTask={setTask}
-            setDescription={setDescription}
-            {...obj}
-          />
-        ))}
-        {/* if (index % 2 === 0) {
+      <div style={container}>
+        <section className="toDoContainer">
+          { toDoItems.map((obj, index) => (
+            <ToDo
+              key={obj._id}
+              setToDoItems={setToDoItems}
+              setTask={setTask}
+              setDescription={setDescription}
+              {...obj}
+            />
+          ))}
+          {/* if (index % 2 === 0) {
             return (
               <div className="column">
                 <ToDo
@@ -132,7 +145,7 @@ export default function App() {
                 />
               </div> */}
 
-        {/* } else {
+          {/* } else {
             return (
               <div className="column">
                 <ToDo
@@ -144,8 +157,9 @@ export default function App() {
               </div>
             );
           } */}
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 }
 //https://www.youtube.com/c/LayoutLand/videos

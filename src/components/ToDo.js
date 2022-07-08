@@ -25,7 +25,8 @@ export default function ToDo({
 
   const [isCompleted, setIsCompleted] = useState(false);
   let styles = {
-    padding: "2.5%",
+    padding: "1rem",
+    lineHeight: "1.4rem",
     // width: "80%",
   };
 
@@ -87,8 +88,19 @@ export default function ToDo({
               style={{ width: "80%", height: "2rem", margin: "2%" }}
               onChange={(e) => setNewTask(e.target.value)}
             />
-          ) : (
+          ) : task !== "" || description !== "" ? (
             <p style={styles}>Task: {task}</p>
+          ) : (
+            <p
+              style={{
+                textAlign: "center",
+                marginTop: "5rem",
+                lineHeight: "25px",
+              }}
+            >
+              This card has no task or description. Click edit to add a task and
+              description!
+            </p>
           )}
           {/* <p style={styles}>Task: {task}</p> */}
           {editing ? (
@@ -100,8 +112,11 @@ export default function ToDo({
               onChange={(e) => setNewDescription(e.target.value)}
             />
           ) : (
-            <p style={styles}>Description: {description}</p>
+            (task !== "" || description !== "") && (
+              <p style={styles}>Description: {description}</p>
+            )
           )}
+
           {/* <p style={styles}>Description: {description}</p> */}
         </div>
         {/* want to use icons for buttons eventually */}
