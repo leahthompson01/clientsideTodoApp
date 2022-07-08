@@ -31,7 +31,7 @@
 .toDoContainer {
   margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 40px;
   grid-auto-rows: minmax(200px, auto);
   grid-row-gap: 10px;
