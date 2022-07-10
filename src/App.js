@@ -41,8 +41,7 @@ export default function App() {
     },
   ]);
   console.log(toDoItems);
-  if(toDoItems.length === 1){
-
+  if (toDoItems.length === 1) {
   }
   const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
@@ -74,7 +73,7 @@ export default function App() {
         setToDoItems((prevData) => [
           ...prevData,
           {
-            _id: response.insertedId,
+            _id: response.data.insertedId,
             task,
             description,
           },
@@ -125,7 +124,7 @@ export default function App() {
       </form>
       <div style={container}>
         <section className="toDoContainer">
-          { toDoItems.map((obj, index) => (
+          {toDoItems.map((obj, index) => (
             <ToDo
               key={obj._id}
               setToDoItems={setToDoItems}
