@@ -5,7 +5,7 @@ import ToDo from "./components/ToDo";
 import "./App.css";
 // https://www.youtube.com/watch?v=15A0F5aOoPM
 
-const endpointURL = "https://notesapi2000000l.herokuapp.com/notes";
+const endpointURL = "https://notesapi2000000l.onrender.com/notes";
 const formStyles = {
   // width: "20%",
   fontSize: "1.2rem",

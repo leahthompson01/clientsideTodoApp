@@ -41,7 +41,7 @@ export default function ToDo({
   }
   function submitEdit() {
     axios
-      .put("https://notesapi2000000l.herokuapp.com/notes", {
+      .put("https://notesapi2000000l.onrender.com/notes", {
         _id: _id,
         task: newTask,
         description: newDescription,
