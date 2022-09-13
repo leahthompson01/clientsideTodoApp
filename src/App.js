@@ -106,13 +106,13 @@ export default function App() {
         Task:{" "}
         <input
           type="text"
-          name="task"
+          name="Note Title"
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
         Description:{" "}
         <textarea
-          name="description"
+          name="Note Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
