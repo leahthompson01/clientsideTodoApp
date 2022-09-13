@@ -40,7 +40,7 @@ export default function App() {
       description: "",
     },
   ]);
-  console.log(toDoItems);
+
   if (toDoItems.length === 1) {
   }
   const [task, setTask] = useState("");
@@ -59,7 +59,6 @@ export default function App() {
     axios
       .get(endpointURL)
       .then((data) => {
-        console.log("Data from get request", data);
         setToDoItems(data.data);
       })
       .catch((err) => console.error(err));
@@ -69,7 +68,6 @@ export default function App() {
     axios
       .post(endpointURL, { task: task, description: description })
       .then((response) => {
-        console.log(response);
         setToDoItems((prevData) => [
           ...prevData,
           {

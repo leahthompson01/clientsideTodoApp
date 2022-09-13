@@ -62,7 +62,6 @@ export default function ToDo({
     editToDo();
   }
   function deleteItem() {
-    console.log(`This is the id ${_id} `);
     axios
       .delete("https://notesapi2000000l.herokuapp.com/notes", {
         data: { _id: _id },
