@@ -88,7 +88,7 @@ export default function ToDo({
               onChange={(e) => setNewTask(e.target.value)}
             />
           ) : task !== "" || description !== "" ? (
-            <p style={styles}>Note Title: {task}</p>
+            <p style={styles}>Title: {task}</p>
           ) : (
             <p
               style={{

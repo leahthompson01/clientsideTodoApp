@@ -103,10 +103,10 @@ export default function App() {
   return (
     <>
       <form style={formStyles} className="formArea">
-        Note Title:{" "}
+        Title:{" "}
         <input
           type="text"
-          name="Note Title"
+          name="task"
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
