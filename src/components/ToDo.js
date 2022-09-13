@@ -112,7 +112,7 @@ export default function ToDo({
             />
           ) : (
             (task !== "" || description !== "") && (
-              <p style={styles}>Note Description: {description}</p>
+              <p style={styles}>Description: {description}</p>
             )
           )}
 

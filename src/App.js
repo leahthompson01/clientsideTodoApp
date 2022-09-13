@@ -103,7 +103,7 @@ export default function App() {
   return (
     <>
       <form style={formStyles} className="formArea">
-        Task:{" "}
+        Note Title:{" "}
         <input
           type="text"
           name="Note Title"
@@ -112,7 +112,7 @@ export default function App() {
         />
         Description:{" "}
         <textarea
-          name="Note Description"
+          name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
